@@ -1,60 +1,102 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: wangyong
-  Date: 2017/11/12
-  Time: 14:08
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+            + path + "/";
+%>
 <html>
 <head>
-    <title>Title</title>
-    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
-    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
-    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="/css/contents.css" rel="stylesheet">
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/api?v=2.0&ak=l9pqrCK9etb47ILcKbMC8cm27GxmMdrd"></script>
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/library/SearchControl/1.4/src/SearchControl_min.js"></script>
+    <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchControl/1.4/src/SearchControl_min.css"/>
+    <base href="<%=basePath%>">
 </head>
 <body>
-<div class="form-group has-success">
-    <label class="control-label" for="inputSuccess1">Input with success</label>
-    <input type="text" class="form-control" id="inputSuccess1" aria-describedby="helpBlock2">
-    <span id="helpBlock2" class="help-block">A block of help text that breaks onto a new line and may extend beyond one line.</span>
-</div>
-<div class="form-group has-warning">
-    <label class="control-label" for="inputWarning1">Input with warning</label>
-    <input type="text" class="form-control" id="inputWarning1">
-</div>
-<div class="form-group has-error">
-    <label class="control-label" for="inputError1">Input with error</label>
-    <input type="text" class="form-control" id="inputError1">
-</div>
-<div class="has-success">
-    <div class="checkbox">
-        <label>
-            <input type="checkbox" id="checkboxSuccess" value="option1">
-            Checkbox with success
-        </label>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    <input type="text" placeholder="Email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="password" placeholder="Password" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-success">Sign in</button>
+            </form>
+        </div><!--/.navbar-collapse -->
     </div>
+</nav>
+
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<%--<div class="jumbotron">--%>
+<%--<div class="container">--%>
+<%--<h1>Hello, world!</h1>--%>
+<%--<p>This is a template for a simple marketing or informational website. It includes a large callout called a--%>
+<%--jumbotron and three supporting pieces of content. Use it as a starting point to create something more--%>
+<%--unique.</p>--%>
+<%--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>--%>
+<%--</div>--%>
+<%--</div>--%>
+<br>
+
+<div id="searchBox" class="container"></div>
+<div id="map_container" class="container">
 </div>
-<div class="has-warning">
-    <div class="checkbox">
-        <label>
-            <input type="checkbox" id="checkboxWarning" value="option1">
-            Checkbox with warning
-        </label>
-    </div>
-</div>
-<div class="has-error">
-    <div class="checkbox">
-        <label>
-            <input type="checkbox" id="checkboxError" value="option1">
-            Checkbox with error
-        </label>
-    </div>
-</div>
+
+
+<footer>
+    <p>&copy; 2016 Company, Inc.</p>
+</footer>
+</div> <!-- /container -->
+<script type="text/javascript">
+    var aMap = new BMap.Map("map_container");
+    // 创建地图实例
+    var point = new BMap.Point(116.404, 39.915);
+    aMap.centerAndZoom(point, 3);
+    aMap.enableScrollWheelZoom(true);
+
+    // 创建点坐标
+    <s:iterator 
+    var marker = new BMap.Marker(point);
+    var info = "<h4 style='margin:0 0 5px 0;padding:0.2em 0'>${movieName}</h4>" +
+        "<img style='float:right;margin:4px' id='img' src='${imageName}' width='100' height='100' title='${movieName}'/>" +
+        "<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>${details}</p>" +
+        "</div>";
+    var infoWindow = new BMap.InfoWindow(info);
+    aMap.addOverlay(marker);
+    marker.addEventListener("click", function () {
+        this.openInfoWindow(infoWindow);
+        document.getElementById('img').onload = function () {
+            infoWindow.redraw();
+        }
+    });
+        aMap.enableScrollWheelZoom(true);
+        var searchControl = new BMapLib.SearchControl({
+            container: "searchBox"
+            , map: aMap
+            , type: 1
+        });
+
+
+</script>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 </html>

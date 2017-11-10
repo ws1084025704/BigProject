@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE struts PUBLIC
-        "-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
-        "http://struts.apache.org/dtds/struts-2.1.7.dtd">
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
 <struts>
-    <!--s2hibernate插件里面有一个叫hibernate-default的package，
-    它里面的拦截器用于实现struts2+hibernate整合-->
-    <package name="default" extends="hibernate-default">
-        <!--defaultStackHibernate里面的拦截器会识别出@SessionTarget，@TransactionTarget等标注，
-        然后将hibernate注入进去-->
-        <default-interceptor-ref name="defaultStackHibernate"/>
-        <default-class-ref class="com.yyq.action.ListAllAction"/>
-        <action name="listAll" method="list">
-            <result>index.jsp</result>
+
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <constant name="struts.configuration.xml.reload" value="true" />
+    <constant name="struts.serve.static.browserCache" value="false" />
+    <constant name="struts.devMode" value="true" />
+
+    <package name="front" namespace="/" extends="struts-default">
+
+
+        <action name="lookMessageAction" class="action.ListAllAction">
+            <result >index.jsp</result>
         </action>
+
     </package>
 </struts>

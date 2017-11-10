@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.i18n.encoding" value="utf-8"/>
+    <constant name="struts.ui.theme" value="simple" />
+    <package name="default" extends="struts-default">
+        <action name="register" class="cn.yong.action.UserActions" method="register">
+            <result name="success">/index.jsp</result>
+        </action>
+        <!--<action name="login" method="validateUser" class="cn.yong.action.loginAction">-->
+            <!--<result name="success">/home.jsp</result>-->
+            <!--<result name="input">/login.jsp</result>-->
+        <!--</action>-->
+
+        <!--<action name="upload" class="cn.yong.action.uploadInfo">-->
+            <!--<result name="success">/showMarkers.jsp</result>-->
+            <!--<result name="error">/error.jsp</result>-->
+
+            <!--&lt;!&ndash; 定义图片上传拦截器 &ndash;&gt;-->
+            <!--<interceptor-ref name="fileUpload">-->
+                <!--&lt;!&ndash; 定义图片大小 &ndash;&gt;-->
+                <!--<param name="maximumSize">500000</param>-->
+                <!--<param name="allowedTypes">-->
+                    <!--image/jpg,image/jpeg,image/bmp,image/gif,image/png-->
+                <!--</param>-->
+            <!--</interceptor-ref>-->
+            <!--&lt;!&ndash; 自定义了拦截器后必手动定义默认的拦截器，否则默认的拦截器不会被执行 &ndash;&gt;-->
+            <!--<interceptor-ref name="defaultStack"></interceptor-ref>-->
+        <!--</action>-->
+    </package>
+</struts>

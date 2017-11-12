@@ -4,9 +4,9 @@
     <title>注册</title>
 </head>
 <body>
-    <form action="register">
-        <input type="text" name="newUser.username">
-        <input type="password" name="newUser.password">
+    <form action="register" method="post">
+        <input type="text" name="user.username">
+        <input type="password" name="user.password">
         <input type="submit" value="注册">
     </form>
 </body>

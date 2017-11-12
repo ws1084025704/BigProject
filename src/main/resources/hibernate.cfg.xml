@@ -4,14 +4,31 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/Movie?useUnicode=true&amp;characterEncoding=UTF-8
-        </property>
+        <!--  mysql账户名  -->
         <property name="connection.username">root</property>
+
+        <!--  mysql密码  -->
         <property name="connection.password">qazwsx</property>
+        <property name="c3p0.min_size">5</property>
+
+        <property name="c3p0.max_size">20</property>
+
+        <property name="c3p0.timeout">1800</property>
+
+        <property name="c3p0.max_statements">50</property>
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/Movie?useUnicode=true&amp;characterEncoding=UTF-8</property>
         <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
         <property name="show_sql">true</property>
         <property name="hbm2ddl.auto">update</property>
+        <!--<property name="connection.pool_size">10</property>-->
+        <!--&lt;!&ndash; 每次都验证连接是否可用 &ndash;&gt;-->
+        <!--<property name="hibernate.c3p0.validate">true</property>-->
+        <!--&lt;!&ndash; 检查连接池中所有空闲连接的间隔时间，单位为秒（要注意的是MySQL的自动关闭空闲超过8小时连接的机制） &ndash;&gt;-->
+        <!--<property name="hibernate.c3p0.idle_test_period">18000</property>-->
+        <!--&lt;!&ndash; 连接的最大空闲时间,25000秒内未使用则连接被丢弃。单位为秒（要注意的是MySQL的自动关闭空闲超过8小时连接的机制） &ndash;&gt;-->
+        <!--<property name="hibernate.c3p0.timeout">25000</property>-->
         <mapping class="cn.yong.entity.User"/>
+        <mapping class="cn.yong.entity.Story"/>
     </session-factory>
 </hibernate-configuration>

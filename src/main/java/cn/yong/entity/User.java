@@ -49,9 +49,7 @@ public class User {
 
         if (id != null ? !id.equals(that.id) : that.id != null) return false;
         if (username != null ? !username.equals(that.username) : that.username != null) return false;
-        if (password != null ? !password.equals(that.password) : that.password != null) return false;
-
-        return true;
+        return password != null ? password.equals(that.password) : that.password == null;
     }
 
     @Override

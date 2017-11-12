@@ -1,41 +1,18 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>
-<%@page contentType="text/html" pageEncoding="UTF-8" import="java.util.ArrayList,PO.InformationEntity"%>
+
+<%@  page language="java" pageEncoding="utf-8"%>
+<%@ taglib prefix="s" uri="/struts-tags"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-    <title>显示数据</title>
+    <title>电影信息</title>
 </head>
+
 <body>
-<table>
-    <tr>
-        <th>pointID</th>
-        <th>userID</th>
-        <th>longitude</th>
-        <th>latitude</th>
-        <th>info</th>
-        <th>movieName</th>
-    </tr>
-    <%
-        ArrayList list=(ArrayList)session.getAttribute("allInfo");
+<div align="center">
 
-    %>
-    <%
 
-        for(int i=0;i<list.size();i++){
-            InformationEntity info=(InformationEntity)list.get(i);
-    %>
-    <tr>
-        <td align="center"><%=i+1%></td>
-        <td><%=info.getPointId()%></td>
-        <td><%=info.getUserId()%></td>
-        <td><%=info.getLongitude()%></td>
-        <td><%=info.getLatitude()%></td>
-        <td><%=info.getInfo()%></td>
-        <td><%=info.getMovieName()%></td>
-    </tr>
-    <%
-            }
-
-    %>
-</table>
+    <br />
+    <s:a href="lookMessageAction.action">点击进入</s:a>
+</div>
 </body>
 </html>

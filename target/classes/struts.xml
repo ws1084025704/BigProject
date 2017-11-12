@@ -14,7 +14,10 @@
 
 
         <action name="lookMessageAction" class="action.ListAllAction">
-            <result >index.jsp</result>
+            <result name="success">
+                /lookMessage.jsp
+            </result>
+            <result name="input">/index.jsp</result>
         </action>
 
     </package>

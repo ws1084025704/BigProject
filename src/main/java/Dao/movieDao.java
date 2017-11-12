@@ -33,11 +33,11 @@ public class movieDao {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
         try{
             transaction=session.beginTransaction();
-            String queryString="from movieInfo";
+            String queryString="from InformationEntity";
             query=session.createQuery(queryString);
             List list=query.list();
             transaction.commit();
-            session.close();
+
             return list;
         }catch(Exception e){
             message("findInfo.error:"+e);

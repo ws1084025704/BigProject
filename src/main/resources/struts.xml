@@ -5,7 +5,7 @@
 
 <struts>
     <constant name="struts.devMode" value="true" />
-    <constant name="struts.i18n.encoding" value="utf-8"/>
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
     <constant name="struts.ui.theme" value="simple" />
     <package name="default" extends="struts-default">
         <action name="register" class="cn.yong.action.UserActions" method="register">
@@ -31,25 +31,8 @@
             <!-- 自定义了拦截器后必手动定义默认的拦截器，否则默认的拦截器不会被执行 -->
             <interceptor-ref name="defaultStack"></interceptor-ref>
         </action>
-        <!--<action name="login" method="validateUser" class="cn.yong.action.loginAction">-->
-            <!--<result name="success">/home.jsp</result>-->
-            <!--<result name="input">/login.jsp</result>-->
-        <!--</action>-->
-
-        <!--<action name="Upload" class="cn.yong.action.uploadInfo">-->
-            <!--<result name="success">/showMarkers.jsp</result>-->
-            <!--<result name="error">/error.jsp</result>-->
-
-            <!--&lt;!&ndash; 定义图片上传拦截器 &ndash;&gt;-->
-            <!--<interceptor-ref name="fileUpload">-->
-                <!--&lt;!&ndash; 定义图片大小 &ndash;&gt;-->
-                <!--<param name="maximumSize">500000</param>-->
-                <!--<param name="allowedTypes">-->
-                    <!--image/jpg,image/jpeg,image/bmp,image/gif,image/png-->
-                <!--</param>-->
-            <!--</interceptor-ref>-->
-            <!--&lt;!&ndash; 自定义了拦截器后必手动定义默认的拦截器，否则默认的拦截器不会被执行 &ndash;&gt;-->
-            <!--<interceptor-ref name="defaultStack"></interceptor-ref>-->
-        <!--</action>-->
+        <action name="showMarkers" class="cn.yong.action.Download" method="getMarkers">
+            <result name="success">/test.jsp</result>
+        </action>
     </package>
 </struts>

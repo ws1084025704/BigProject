@@ -1,5 +1,5 @@
-<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
@@ -55,6 +55,7 @@
 
 <div id="pic" style="border: 1px;position: absolute;width: 400px;height: 400px; background:white;visibility: hidden"></div>
 
+<a href="<s:url action="showMarkers"/> ">点击查看所有标注</a>
 <iframe name="uploadFrame" class="container" style="position:absolute;background:white;visibility: visible"></iframe>
 <hr>
 

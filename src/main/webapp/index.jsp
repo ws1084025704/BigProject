@@ -10,9 +10,9 @@
 <body>
 <div align="center">
 
-
     <br />
-    <s:a href="lookMessageAction.action">点击进入</s:a>
+    <s:a href="lookMessageAction.action">查看全部信息</s:a>
+    <s:a href="/Search">Search</s:a>
 </div>
 </body>
 </html>

@@ -22,7 +22,7 @@
     %>
     <tr>
         <td align="center">
-            <span>暂无学生信息!</span>
+            <span>暂无电影信息!</span>
         </td>
     </tr>
     <%

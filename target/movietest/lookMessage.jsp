@@ -22,7 +22,7 @@
     %>
     <tr>
         <td align="center">
-            <span>暂无学生信息!</span>
+            <span>暂无电影信息!</span>
         </td>
     </tr>
     <%
@@ -31,7 +31,7 @@
         InformationEntity info=(InformationEntity)list.get(i);
     %>
     <tr>
-        
+
         <td><%=info.getPointId()%></td>
         <td><%=info.getUserId()%></td>
         <td><%=info.getLongitude()%></td>

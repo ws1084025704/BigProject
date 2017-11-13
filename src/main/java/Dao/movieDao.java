@@ -46,6 +46,33 @@ public class movieDao {
         }
     }
 
+
+    public List<InformationEntity> findInfo(String type,Object value){
+        session=HibernateUtil.getSessionFactory().getCurrentSession();
+        if(session==null){
+            System.out.println("dao中session是空的");
+        }
+        try{
+            transaction=session.beginTransaction();
+            String queryString="from InformationEntity as model where model.movieName like '%\"+sname+\"%'";
+
+            query=session.createQuery(queryString);
+
+            List<InformationEntity>  list=query.list();
+            transaction.commit();
+
+            return list;
+        }catch(Exception e){
+            message("findInfo.error:"+e);
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
+
+
+
     public void message(String mess){
         int type=JOptionPane.YES_NO_OPTION;
         String title="提示信息";

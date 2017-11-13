@@ -20,5 +20,17 @@
             <result name="input">/index.jsp</result>
         </action>
 
+        <action name="findMessageAction" class="action.FindMassageAction">
+            <result name="success">/Search.jsp</result>
+            <result name="input">/findMessage.jsp</result>
+        </action>
+
+
+
+        <action name="SearchMessageAction" class="action.FindMassageAction">
+            <result name="success">/findMessage.jsp</result>
+            <result name="input">/index.jsp</result>
+        </action>
+
     </package>
 </struts>

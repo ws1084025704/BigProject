@@ -32,7 +32,7 @@
             <interceptor-ref name="defaultStack"></interceptor-ref>
         </action>
         <action name="showMarkers" class="cn.yong.action.Download" method="getMarkers">
-            <result name="success">/test.jsp</result>
+            <result name="success">/showMarkers.jsp</result>
         </action>
     </package>
 </struts>

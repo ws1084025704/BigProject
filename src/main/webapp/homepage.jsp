@@ -56,7 +56,8 @@
 <div id="pic" style="border: 1px;position: absolute;width: 400px;height: 400px; background:white;visibility: hidden"></div>
 
 <a href="<s:url action="showMarkers"/> ">点击查看所有标注</a>
-<iframe name="uploadFrame" class="container" style="position:absolute;background:white;visibility: visible"></iframe>
+<iframe name="uploadFrame" class="container" style="position:absolute;background:white;
+width: 200px;height: 40px;visibility: visible"></iframe>
 <hr>
 
 <footer>
@@ -110,7 +111,7 @@
             "    </div>\n" +
             "<input type='hidden' name='lng'>" +
             "<input type='hidden' name='lat'>" +
-            "    <button type=\"submit\" class=\"btn btn-default\" onclick=\"hide('pic');\">Submit</button>\n" +
+            "    <button type=\"submit\" class=\"btn btn-default\" onclick=\"hide('pic');alert('上传成功')\">Submit</button>\n" +
             "</form>";
         document.getElementById("pic").innerHTML = formDiv;
         document.uploadForm.lng.value=e.point.lng;

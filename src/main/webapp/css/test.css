@@ -35,6 +35,26 @@ body {
     text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 
+
+#map_container{
+    margin-top: 80px;
+    margin-left: 50px;
+    position: absolute  ;
+    left: 200px;
+    top:100px;
+    width: 1600px;
+    border: 1px solid #999;
+    height: 900px;
+}
+#searchBox{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-left: 150px;
+    position: absolute;
+    left: 100px;
+    top: 50px;
+    width:500px;
+}
 /* Extra markup and styles for table-esque vertical and horizontal centering */
 .site-wrapper {
     display: table;
@@ -161,4 +181,3 @@ body {
         width: 700px;
     }
 }
-

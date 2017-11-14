@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="/css/cover.css" rel="stylesheet">
+    <link href="/css/loginDialog.css" rel="stylesheet">
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
@@ -34,8 +35,9 @@
             </div>
 
             <div class="inner cover">
-                <h1 class="cover-heading">Cover your page.</h1>
-                <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+                <h1 class="cover-heading">Travel with the Movies.</h1>
+                <p class="lead">Mark your favourite movies with the basic description and your feelings. Taste all kinds of plot and lost in the atmosphere of the movie. </p>
+                <p class="lead"> Plan your own travel route to follow the footprint of actors.</p>
                 <p class="lead">
                     <a href="#" class="btn btn-lg btn-default">Learn more</a>
                 </p>

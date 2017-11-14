@@ -13,7 +13,7 @@
         </action>
 
         <action name="login" class="cn.yong.action.UserActions" method="login">
-            <result name="success">/homepage.jsp</result>
+            <result name="success">/markMarkers.jsp</result>
             <result name="error">/error_login.jsp</result>
         </action>
         <action name="upload" class="cn.yong.action.Upload" method="upload">

@@ -13,7 +13,6 @@
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="/css/contents.css" rel="stylesheet">
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=1.4"></script>
-    <script type="text/javascript" src="js/arrow.js"></script>
     <base href="<%=basePath%>">
 </head>
 <body>
@@ -27,18 +26,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="markMarkers.jsp">添加标注</a>
+            <a class="navbar-brand" href="<s:url action="showMarkers"/>">查看标注</a>
+            <a class="navbar-brand" href="line.jsp">指定旅行路线</a>
+            <a class="navbar-brand" href="<s:url action="getTable"/>">查询自己标注的信息</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right">
-                <div class="form-group">
-                    <input type="text" placeholder="Email" class="form-control">
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Password" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-success">Sign in</button>
-            </form>
+            <a class="navbar-form navbar-right" href="logout.jsp">注销</a>
+            <p class="navbar-form navbar-right" style="color: #ffffff;">Hello, ${sessionScope.username}</p>
         </div><!--/.navbar-collapse -->
     </div>
 </nav>
@@ -49,10 +44,6 @@
 <iframe name="uploadFrame" id="uploadFrame" style="position:absolute;background:white;visibility: hidden"></iframe>
 <hr>
 
-<footer>
-    <p>&copy; 2016 Company, Inc.</p>
-</footer>
-</div> <!-- /container -->
 
 <script type="text/javascript">
     //创建和初始化地图函数：
@@ -68,7 +59,7 @@
     function createMap(){
         var map = new BMap.Map("map_container");//在百度地图容器中创建一个地图
         var point = new BMap.Point(116.404, 39.915);//定义一个中心点坐标
-        map.centerAndZoom(point,15);//设定地图的中心点和坐标并将地图显示在地图容器中
+        map.centerAndZoom(point,3);//设定地图的中心点和坐标并将地图显示在地图容器中
         window.map = map;//将map变量存储在全局
     }
 
@@ -146,9 +137,9 @@
 
     var lpoint = [];  //116.404, 39.915
     var points = [
-        {"lng":319.234,"lat":43.360,"name":"泰坦尼克号","picture":"/img/王勇.jpg","detail":"我爱北京天安门"},
-        {"lng":0,"lat":-39.925,"name":"movie2","picture":"/img/王勇.jpg","detail":"我爱北京地安门"},
-        {"lng":269,"lat":39.920,"name":"movie3","picture":"/img/王勇.jpg","detail":"我爱北京"}
+        {"lng":319.234,"lat":43.360,"name":"正义联盟","picture":"/img/王勇.jpg","detail":"蝙蝠侠从这里出发拯救世界。"},
+        {"lng":0,"lat":-39.925,"name":"正义联盟","picture":"/img/王勇.jpg","detail":"神奇女侠的取景地在这里。"},
+        {"lng":269,"lat":39.920,"name":"正义联盟","picture":"/img/王勇.jpg","detail":"闪电侠大战恶魔的镜头在这里拍的。"}
     ];
     initMap(points);//创建和初始化地图
 

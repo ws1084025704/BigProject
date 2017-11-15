@@ -29,7 +29,8 @@
             </button>
             <a class="navbar-brand" href="markMarkers.jsp">添加标注</a>
             <a class="navbar-brand" href="<s:url action="showMarkers"/>">查看标注</a>
-
+            <a class="navbar-brand" href="line.jsp">指定旅行路线</a>
+            <a class="navbar-brand" href="<s:url action="getTable"/>">查询自己标注的信息</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <a class="navbar-form navbar-right" href="logout.jsp">注销</a>

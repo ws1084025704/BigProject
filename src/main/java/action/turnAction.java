@@ -37,4 +37,11 @@ public class turnAction extends ActionSupport {
         return "success";
 
     }
+
+    public String getid() throws Exception {
+        movieDao dao = new movieDao();
+        list = dao.findAllInfo();
+        return "success";
+
+    }
 }

@@ -37,6 +37,4 @@ public class turnAction extends ActionSupport {
         return "success";
 
     }
-
-
 }

@@ -34,20 +34,6 @@ public class Search {
             e.printStackTrace();
         }
 
-        try {
-            request = ServletActionContext.getRequest();
-            movieDao dao = new movieDao();
-            List list = dao.findAllInfo();
-            request.getSession().setAttribute("count", list.size());
-            request.getSession().setAttribute("allInfo", list);
-            message = "success";
-            return message;
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-
         return message;
 
     }

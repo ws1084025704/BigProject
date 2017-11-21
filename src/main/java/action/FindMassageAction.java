@@ -36,7 +36,7 @@ public class FindMassageAction extends ActionSupport {
 
     public void message(String mess){
         int type=JOptionPane.YES_NO_OPTION;
-        String title="remind";
+        String title="提示信息";
         JOptionPane.showMessageDialog(null, mess, title, type);
     }
 

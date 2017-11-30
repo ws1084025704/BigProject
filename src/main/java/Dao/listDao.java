@@ -29,6 +29,23 @@ public class listDao {
             }
         }
 
+        public List findAllInfo(){
+            Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+            try{
+                transaction=session.beginTransaction();
+                String queryString="from InformationEntity";
+                query=session.createQuery(queryString);
+                List list=query.list();
+                transaction.commit();
+
+                return list;
+            }catch(Exception e){
+                message("findInfo.error:"+e);
+                e.printStackTrace();
+                return null;
+            }
+        }
+
 
 
 

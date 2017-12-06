@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <constant name="struts.configuration.xml.reload" value="true" />
+    <constant name="struts.serve.static.browserCache" value="false" />
+    <constant name="struts.devMode" value="true" />
+
+    <package name="front" namespace="/" extends="struts-default">
+
+
+        <action name="lookMessageAction" class="action.ListAllAction">
+            <result name="success">
+                /lookMessage.jsp
+            </result>
+            <result name="input">/index.jsp</result>
+        </action>
+
+        <action name="findMessageAction" class="action.FindMassageAction">
+            <result name="success">/Search.jsp</result>
+            <result name="input">/findMessage.jsp</result>
+        </action>
+
+
+
+        <action name="SearchMessageAction" class="action.FindMassageAction">
+            <result name="success">/findMessage.jsp</result>
+            <result name="input">/index.jsp</result>
+        </action>
+
+    </package>
+</struts>

@@ -4,6 +4,36 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
+<<<<<<< HEAD
+
+    <constant name="struts.i18n.encoding" value="UTF-8"/>
+    <constant name="struts.configuration.xml.reload" value="true" />
+    <constant name="struts.serve.static.browserCache" value="false" />
+    <constant name="struts.devMode" value="true" />
+
+    <package name="front" namespace="/" extends="struts-default">
+
+
+        <action name="lookMessageAction" class="action.ListAllAction">
+            <result name="success">
+                /lookMessage.jsp
+            </result>
+            <result name="input">/index.jsp</result>
+        </action>
+
+        <action name="findMessageAction" class="action.FindMassageAction">
+            <result name="success">/Search.jsp</result>
+            <result name="input">/findMessage.jsp</result>
+        </action>
+
+
+
+        <action name="SearchMessageAction" class="action.FindMassageAction">
+            <result name="success">/findMessage.jsp</result>
+            <result name="input">/index.jsp</result>
+        </action>
+
+=======
     <constant name="struts.devMode" value="true" />
     <constant name="struts.i18n.encoding" value="utf-8"/>
     <constant name="struts.ui.theme" value="simple" />
@@ -51,5 +81,6 @@
             <!--&lt;!&ndash; 自定义了拦截器后必手动定义默认的拦截器，否则默认的拦截器不会被执行 &ndash;&gt;-->
             <!--<interceptor-ref name="defaultStack"></interceptor-ref>-->
         <!--</action>-->
+>>>>>>> a8d863d2a955aa3900c1cd2c6bfddd8a03fec4ad
     </package>
 </struts>

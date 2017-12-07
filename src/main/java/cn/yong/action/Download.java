@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Download {
+	
     List<Story> storys = new ArrayList<Story>();
     StoryDAO storydao = new StoryDAO();
     List<Story> table_Storys = new ArrayList<Story>();

@@ -4,6 +4,7 @@
         "http://struts.apache.org/dtds/struts-2.5.dtd">
 
 <struts>
+<<<<<<< HEAD
 
     <constant name="struts.i18n.encoding" value="UTF-8"/>
     <constant name="struts.configuration.xml.reload" value="true" />
@@ -32,5 +33,54 @@
             <result name="input">/index.jsp</result>
         </action>
 
+=======
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.i18n.encoding" value="utf-8"/>
+    <constant name="struts.ui.theme" value="simple" />
+    <package name="default" extends="struts-default">
+        <action name="register" class="cn.yong.action.UserActions" method="register">
+            <result name="success">/index.jsp</result>
+        </action>
+
+        <action name="login" class="cn.yong.action.UserActions" method="login">
+            <result name="success">/homepage.jsp</result>
+            <result name="error">/error_login.jsp</result>
+        </action>
+        <action name="upload" class="cn.yong.action.Upload" method="upload">
+            <result name="success">/success_upload.jsp</result>
+            <result name="error">/error_upload.jsp</result>
+
+            <!-- 定义图片上传拦截器 -->
+            <interceptor-ref name="fileUpload">
+            <!-- 定义图片大小 -->
+            <param name="maximumSize">500000</param>
+            <param name="allowedTypes">
+            image/jpg,image/jpeg,image/bmp,image/gif,image/png
+            </param>
+            </interceptor-ref>
+            <!-- 自定义了拦截器后必手动定义默认的拦截器，否则默认的拦截器不会被执行 -->
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+        </action>
+        <!--<action name="login" method="validateUser" class="cn.yong.action.loginAction">-->
+            <!--<result name="success">/home.jsp</result>-->
+            <!--<result name="input">/login.jsp</result>-->
+        <!--</action>-->
+
+        <!--<action name="Upload" class="cn.yong.action.uploadInfo">-->
+            <!--<result name="success">/showMarkers.jsp</result>-->
+            <!--<result name="error">/error.jsp</result>-->
+
+            <!--&lt;!&ndash; 定义图片上传拦截器 &ndash;&gt;-->
+            <!--<interceptor-ref name="fileUpload">-->
+                <!--&lt;!&ndash; 定义图片大小 &ndash;&gt;-->
+                <!--<param name="maximumSize">500000</param>-->
+                <!--<param name="allowedTypes">-->
+                    <!--image/jpg,image/jpeg,image/bmp,image/gif,image/png-->
+                <!--</param>-->
+            <!--</interceptor-ref>-->
+            <!--&lt;!&ndash; 自定义了拦截器后必手动定义默认的拦截器，否则默认的拦截器不会被执行 &ndash;&gt;-->
+            <!--<interceptor-ref name="defaultStack"></interceptor-ref>-->
+        <!--</action>-->
+>>>>>>> a8d863d2a955aa3900c1cd2c6bfddd8a03fec4ad
     </package>
 </struts>

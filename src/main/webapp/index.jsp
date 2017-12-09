@@ -1,23 +1,4 @@
-<<<<<<< HEAD
 
-<%@  page language="java" pageEncoding="utf-8"%>
-<%@ taglib prefix="s" uri="/struts-tags"%>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
-<head>
-    <title>电影信息</title>
-</head>
-
-<body>
-<div align="center">
-
-    <br />
-    <s:a href="lookMessageAction.action">查看全部信息</s:a>
-    <s:a href="/Search">Search</s:a>
-</div>
-</body>
-</html>
-=======
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
 
@@ -74,4 +55,4 @@
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
->>>>>>> a8d863d2a955aa3900c1cd2c6bfddd8a03fec4ad
+

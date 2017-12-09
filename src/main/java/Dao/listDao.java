@@ -28,6 +28,20 @@ public class listDao {
                 return false;
             }
         }
+         public boolean  saveInfo(InformationEntity info){
+            try{
+                Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+                transaction=session.beginTransaction();
+                session.save(info);
+                transaction.commit();
+                session.close();
+                return true;
+            }catch(Exception e){
+                message("saveInfo.error:"+e);
+                e.printStackTrace();
+                return true;
+            }
+        }
 
 
 

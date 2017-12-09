@@ -78,4 +78,10 @@ public class movieDao {
         String title="提示信息";
         JOptionPane.showMessageDialog(null, mess, title, type);
     }
+
+    public void message(String mess){
+        int type=JOptionPane.YES_NO_OPTION;
+        String title="提示信息";
+        JOptionPane.showMessageDialog(null, mess, title, type);
+    }
 }

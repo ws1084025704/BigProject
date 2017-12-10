@@ -21,7 +21,7 @@ public class FindMassageAction extends ActionSupport {
     }
     public void validate(){
         if(this.getSearch().equals("null")){
-            message("暂无信息");
+            message("no message");
             addFieldError("search","暂无信息！");
         }
     }
@@ -34,14 +34,6 @@ public class FindMassageAction extends ActionSupport {
         return message;
     }
 
-    public String execute() throws Exception{
-        request=ServletActionContext.getRequest();
-        movieDao dao=new movieDao();
-        List list=dao.findInfo("search", this.getSearch());
-        request.getSession().setAttribute("oneInfo", list);
-        message="success";
-        return message;
-    }
 
     public void message(String mess){
         int type=JOptionPane.YES_NO_OPTION;

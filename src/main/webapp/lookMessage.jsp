@@ -35,9 +35,7 @@
         <td><%=info.getPointId()%></td>
         <td><%=info.getUserId()%></td>
         <td><%=info.getLongitude()%></td>
-        <td><%=info.getLatitude()%></td>
-        <td><%=info.getInfo()%></td>
-        <td><%=info.getMovieName()%></td>
+        
     </tr>
     <%
         }

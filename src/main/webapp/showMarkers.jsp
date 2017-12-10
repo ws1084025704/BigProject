@@ -3,7 +3,7 @@
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
-            + path + "/";
+            + path;
 %>
 <html>
 <head>
@@ -28,18 +28,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="markMarkers.jsp">添加标注</a>
+            <a class="navbar-brand" href="<s:url action="showMarkers"/>">查看标注</a>
+            <a class="navbar-brand" href="line.jsp">指定旅行路线</a>
+            <a class="navbar-brand" href="<s:url action="getTable"/>">查询自己标注的信息</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-            <form class="navbar-form navbar-right">
-                <div class="form-group">
-                    <input type="text" placeholder="Email" class="form-control">
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Password" class="form-control">
-                </div>
-                <button type="submit" class="btn btn-success">Sign in</button>
-            </form>
+            <a class="navbar-form navbar-right" href="logout.jsp">注销</a>
+            <p class="navbar-form navbar-right" style="color: #ffffff;">Hello, ${sessionScope.username}</p>
         </div><!--/.navbar-collapse -->
     </div>
 </nav>
@@ -60,39 +56,41 @@
 <div id="map_container" class="container">
 </div>
 
-
-<footer>
-    <p>&copy; 2016 Company, Inc.</p>
-</footer>
-</div> <!-- /container -->
 <script type="text/javascript">
     var aMap = new BMap.Map("map_container");
     // 创建地图实例
-    var point = new BMap.Point(<s:property value="lng"/>, <s:property value="lat"/>);
+    var point = new BMap.Point(116.404, 39.915);
+    aMap.centerAndZoom(point, 4);
+    aMap.enableScrollWheelZoom(true);
+    var infos=[];
+    var points=[];
+    var markers=[];
+    var infoWindows=[];
     // 创建点坐标
-    var marker = new BMap.Marker(point);
-    var info = "<h4 style='margin:0 0 5px 0;padding:0.2em 0'>${movieName}</h4>" +
-        "<img style='float:right;margin:4px' id='img' src='${imageName}' width='100' height='100' title='${movieName}'/>" +
-        "<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'>${details}</p>" +
+    <s:iterator value="storys" status="st">
+    points[<s:property value='#st.index'/>]= new BMap.Point(<s:property value="lng"/>,<s:property value="lat"/>);
+    markers[<s:property value='#st.index'/>] = new BMap.Marker(points[<s:property value='#st.index'/>]);
+    infos[<s:property value='#st.index'/> ] = "<h4 style='margin:0 0 5px 0;padding:0.2em 0'><s:property value="movieName"/></h4>" +
+        "<img style='float:right;margin:4px' id='img' src='<s:property value="imgPath"/>' width='100' height='100'" +
+        " title='<s:property value="movieName"/>'/>" +
+        "<p style='margin:0;line-height:1.5;font-size:13px;text-indent:2em'><s:property value="details"/></p>" +
         "</div>";
-    var infoWindow = new BMap.InfoWindow(info);
-    aMap.centerAndZoom(point, 15);
-    // 初始化地图，设置中心点坐标和地图级别
-    aMap.addOverlay(marker);
-    marker.addEventListener("click", function () {
-        this.openInfoWindow(infoWindow);
+    infoWindows[<s:property value='#st.index'/>] = new BMap.InfoWindow(infos[<s:property value='#st.index'/>]);
+    aMap.addOverlay(markers[<s:property value='#st.index'/>]);
+    markers[<s:property value='#st.index'/>].addEventListener("click", function () {
+        this.openInfoWindow(infoWindows[<s:property value='#st.index'/>]);
         document.getElementById('img').onload = function () {
-            infoWindow.redraw();
+            infoWindows[<s:property value='#st.index'/>].redraw();
         }
     });
-    //    aMap.enableScrollWheelZoom(true);
-    //    var searchControl = new BMapLib.SearchControl({
-    //        container: "searchBox"
-    //        , map: aMap
-    //        , type: 1
-    //    });
+    </s:iterator>
 
-
+    aMap.enableScrollWheelZoom(true);
+    var searchControl = new BMapLib.SearchControl({
+        container: "searchBox"
+        , map: aMap
+        , type: 1
+    });
 </script>
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

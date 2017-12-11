@@ -1,6 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
-
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort()
+            + path + "/";
+%>
 <html>
 <head>
     <%@include file="cheader.jsp"%>
@@ -50,10 +54,10 @@
 
 </div>
 
-<div class="login-form">
+<div class="login-form" style="color:black;text-shadow:none;">
     <div class="login-header">
         <a href="javascript:;" title="关闭" class="login-close close">×</a>
-        <h3 style="text-align: center">用户注册</h3>
+        <h3 style="color: black;text-align: center">用户注册</h3>
     </div>
     <div class="col-md-10 col-md-offset-1 col-sm-10 col-sm-offset-1 col-xs-10 col-xs-offset-1">
         <form action="register" method="post">
@@ -71,16 +75,16 @@
         </form>
     </div>
 </div>
-<div class="login-form-mask"></div>
+<%--<div class="login-form-mask"></div>--%>
 <script type="text/javascript">
     //设置登录页面弹出效果
     jQuery(document).ready(function ($) {
         $('.nav-login').click(function () {
-            $('.login-form-mask').fadeIn(100);
+//            $('.login-form-mask').fadeIn(100);
             $('.login-form').slideDown(200);
         })
         $('.login-close').click(function () {
-            $('.login-form-mask').fadeOut(100);
+//            $('.login-form-mask').fadeOut(100);
             $('.login-form').slideUp(200);
         })
     })

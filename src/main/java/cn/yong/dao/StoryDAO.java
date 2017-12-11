@@ -18,4 +18,7 @@ public class StoryDAO {
         List<Story> storys=session.createQuery(hql).list();
         return storys;
     }
+    public List<Story> queryStories(String movieName){
+        String hql="From Story Where "
+    }
 }

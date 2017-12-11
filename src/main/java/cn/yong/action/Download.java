@@ -11,6 +11,15 @@ public class Download {
     StoryDAO storydao = new StoryDAO();
     List<Story> table_Storys = new ArrayList<Story>();
 
+    public String getMovieName() {
+        return movieName;
+    }
+
+    public void setMovieName(String movieName) {
+        this.movieName = movieName;
+    }
+
+    String movieName;
     public List<Story> getTable_Storys() {
         return table_Storys;
     }
@@ -33,7 +42,7 @@ public class Download {
     }
 
     public String getTable(){
-        table_Storys=storydao.download();
+        table_Storys=storydao.;
         return "success";
     }
 }

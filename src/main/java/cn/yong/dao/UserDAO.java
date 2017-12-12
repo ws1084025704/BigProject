@@ -9,18 +9,21 @@ import java.util.List;
 
 
 public class UserDAO {
-    Session session = HibernateUtil.getSessionFactory().openSession();
 
 
     public void register(User user) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
         session.beginTransaction();
         session.save(user);
         session.getTransaction().commit();
+        session.close();
     }
 
     public String login(User user) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
         String hql="Select U.password From User U Where U.username='"+user.getUsername()+"'";
         List ls=session.createQuery(hql).list();
+        session.close();
         if(ls.isEmpty())
             return "error";
         else{

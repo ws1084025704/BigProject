@@ -34,9 +34,10 @@
             </div>
 
             <div class="inner cover">
-                <h1 class="cover-heading">Travel with the Movies.</h1>
-                <p class="lead">Mark your favourite movies with the basic description and your feelings. Taste all kinds of plot and lost in the atmosphere of the movie. </p>
-                <p class="lead"> Plan your own travel route to follow the footprint of actors.</p>
+                <h1 class="cover-heading">跟着电影去旅行</h1>
+                <p class="lead">在这里，你可以印刻电影里每一个感动的瞬间，制作自己的电影回忆， </p>
+                <p class="lead">在这里，你可以亲历电影里每一帧震撼的场景，设计独一无二的旅行，</p>
+                <p class="lead">见你所见，爱你所爱，铭刻，每一分心动。</p>
                 <p class="lead">
                     <a href="#" class="btn btn-lg btn-default">Learn more</a>
                 </p>
@@ -44,7 +45,7 @@
 
             <div class="mastfoot">
                 <div class="inner">
-                    <p>Designed by Xiangying, Yong, Sifan, Hongyuan.</p>
+                    <p>Designed by 陈香莹, 王勇, 刘思凡, 倪郑鸿远.</p>
                 </div>
             </div>
 

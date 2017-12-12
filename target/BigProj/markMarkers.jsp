@@ -11,16 +11,12 @@
 </head>
 <body>
 <%@include file="navBar.jsp"%>
-
-<div id="searchBox" class="container" style="margin-top: 20px;margin-bottom: 20px"></div>
+<iframe name="uploadFrame" class="container" style="position:absolute;background:white;
+width: 200px;height: 40px;visibility: hidden"></iframe>
+<div id="searchBox" class="container" style="padding-top: 60px;padding-bottom: 10px"></div>
 <div id="map_container" class="container">
 </div>
 
-<div id="pic"
-     style="border: 1px;position: absolute;width: 400px;height: 400px; background:white;visibility: hidden"></div>
-
-<iframe name="uploadFrame" class="container" style="position:absolute;background:white;
-width: 200px;height: 40px;visibility: hidden"></iframe>
 
 <div class="upload-form" style="color:black;text-shadow:none;">
     <div class="login-header">
@@ -51,29 +47,11 @@ width: 200px;height: 40px;visibility: hidden"></iframe>
 </div>
 <script type="text/javascript">
     var aMap =  initMap(116.404,39.915,15);
-//    var aMap = new BMap.Map("map_container");
-//    // 创建地图实例
-//    var point = new BMap.Point(116.404, 39.915);
-//    // 创建点坐标
-//    var marker;
-//    //创建标记
-//    aMap.centerAndZoom(point, 15);
-//    // 初始化地图，设置中心点坐标和地图级别
-//    aMap.enableScrollWheelZoom(true);
-//    var searchControl = new BMapLib.SearchControl({
-//        container: "searchBox"
-//        , map: aMap
-//        , type: 1
-//    });
-
-//    function hide(id) {
-//        document.getElementById(id).style.visibility = "hidden";
-//    }
-//
-//    function show(id) {
-//        document.getElementById(id).style.visibility = "visible";
-//    }
-
+    var searchControl = new BMapLib.SearchControl({
+        container: "searchBox"
+        , map: aMap
+        , type: 1
+    });
     aMap.addEventListener("dblclick", function (e) {
         var x = event.clientX;
         var y = event.clientY;

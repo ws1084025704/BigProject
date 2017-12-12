@@ -37,5 +37,8 @@
         <action name="getTable" class="cn.yong.action.Download" method="getTable">
             <result name="success">/queryMarkers.jsp</result>
         </action>
+        <action name="line" class="cn.yong.action.Download" method="getMarkers">
+            <result name="success">/drawRoutes.jsp</result>
+        </action>
     </package>
 </struts>

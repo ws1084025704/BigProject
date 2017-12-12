@@ -11,17 +11,18 @@
 </head>
 <body>
 <%@include file="navBar.jsp"%>
-<form action="getTable" style="padding-top: 80px;width:50%;" class="form-inline" target="queryFrame">
+<form action="getTable" style="padding-top: 80px;width:50%;" class="form-inline">
     <div class="form-group">
         <label>电影名称</label>
         <input type="text" class="form-control" name="movieName" placeholder="泰坦尼克号">
     </div>
     <div class="form-group">
-        <input type="submit" class="btn btn-info btn-block" value="查询">
+        <%--<a class="btn btn-info btn-block" href="<s:url action="getTable"/>">查询</a>--%>
+        <%--<input type="submit" class="btn btn-info btn-block" value="查询">--%>
+            <button type="submit" class="btn btn-success">查询</button>
     </div>
 </form>
-
-<table class="table table-bordered table-hover text-center">
+<table class="table table-bordered table-hover text-center" style="width: 80%;text-align: center;margin:0 auto">
     <tr>
         <td>MovieName</td>
         <td>Details</td>

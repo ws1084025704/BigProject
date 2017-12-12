@@ -10,6 +10,7 @@ public class Download {
     List<Story> storys = new ArrayList<Story>();
     StoryDAO storydao = new StoryDAO();
     List<Story> table_Storys = new ArrayList<Story>();
+    String movieName;
 
     public String getMovieName() {
         return movieName;
@@ -18,8 +19,6 @@ public class Download {
     public void setMovieName(String movieName) {
         this.movieName = movieName;
     }
-
-    String movieName;
     public List<Story> getTable_Storys() {
         return table_Storys;
     }
@@ -42,7 +41,7 @@ public class Download {
     }
 
     public String getTable(){
-        table_Storys=storydao.;
+        table_Storys=storydao.queryStories(movieName);
         return "success";
     }
 }

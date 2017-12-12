@@ -10,3 +10,5 @@
 <script type="text/javascript" src="<%=basePath%>/js/SearchControl.js"></script>
 <link rel="stylesheet" href="http://api.map.baidu.com/library/SearchControl/1.4/src/SearchControl_min.css"/>
 <script type="text/javascript" src="<%=basePath%>/js/mapOperations.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/library/TextIconOverlay/1.2/src/TextIconOverlay_min.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/library/MarkerClusterer/1.2/src/MarkerClusterer_min.js"></script>
